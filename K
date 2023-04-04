@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+    int total_cost, amount_received, change_owed, remaining_change;
+    int one_thousand, five_hundred, two_hundred, one_hundred, fifty, twenty, ten, five, one;
+
+    // Step 1: Get total cost from user
+    printf("Enter total cost in shillings: ");
+    scanf("%d", &total_cost);
+
+    // Step 2: Get amount received from user
+    printf("Enter amount received in shillings: ");
+    scanf("%d", &amount_received);
+
+    // Step 3: Calculate change owed
+    change_owed = amount_received - total_cost;
+
+    // Step 4: Check if amount received is enough
+    if (change_owed < 0) {
+        printf("Error: amount received is not enough.\n");
+        return 1;
+    }
+
+    // Step 5: Display change owed
+    printf("Change owed: %d.%02d KES\n", change_owed/100, change_owed%100);
+
+    // Step 6: Break down change into denominations
+    remaining_change = change_owed;
+    one_thousand = remaining_change / 1000;
+    remaining_change = remaining_change % 1000;
+    five_hundred = remaining_change / 500;
+    remaining_change = remaining_change % 500;
+    two_hundred = remaining_change / 200;
+    remaining_change = remaining_change % 200;
+    one_hundred = remaining_change / 100;
+    remaining_change = remaining_change % 100;
+    fifty = remaining_change / 50;
+    remaining_change = remaining_change % 50;
+    twenty = remaining_change / 20;
+    remaining_change = remaining_change % 20;
+    ten = remaining_change / 10;
+    remaining_change = remaining_change % 10;
+    five = remaining_change / 5;
+    remaining_change = remaining_change % 5;
+    one = remaining_change;
+
+    // Step 7: Print out denominations
+    printf("1000 KES: %d\n", one_thousand);
+    printf("500 KES: %d\n", five_hundred);
+    printf("200 KES: %d\n", two_hundred);
+    printf("100 KES: %d\n", one_hundred);
+    printf("50 KES: %d\n", fifty);
+    printf("20 KES: %d\n", twenty);
+    printf("10 KES: %d\n", ten);
+    printf("5 KES: %d\n", five);
+    printf
